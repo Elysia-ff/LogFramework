@@ -9,8 +9,13 @@ namespace LogFramework
     {
         private static readonly StringBuilder sb = new StringBuilder();
 
-        public string LogName { get; protected set; }
-        public LogFlagType LogFlag { get; protected set; }
+        [SerializeField]
+        private string logName;
+        public string LogName { get { return logName; } protected set { logName = value; } }
+
+        [SerializeField]
+        private LogFlagType logFlag;
+        public LogFlagType LogFlag { get { return logFlag; } protected set { logFlag = value; } }
 
         public LogBase()
         {
