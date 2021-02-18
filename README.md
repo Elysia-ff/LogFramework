@@ -26,7 +26,7 @@ See [SampleScript.cs](https://github.com/Elysia-ff/LogFramework/blob/main/Assets
 By calling `LogSystem.Instance.Send(new <YourLogType>(some_arguments));`, you can send the log.  
 Now, we're gonna make a new log. see [LogData.cs](https://github.com/Elysia-ff/LogFramework/blob/main/Assets/LogFramework/LogData.cs)  
 The only one thing you have to do is to make a new class inherits LogBase then set its LogName and LogFlag in the constructor.  
-Do not forget to add a attribute corresponding your new log!  
+Do not forget to add a attribute corresponding to your new log!  
 
 What attribute does correspond to my log? see [LogAttribute.cs](https://github.com/Elysia-ff/LogFramework/blob/main/Assets/LogFramework/LogAttribute.cs)  
 And its name means what arguments does constructor of the log need.
