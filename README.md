@@ -49,7 +49,7 @@ So Log Finder will show you those 3 rows only. `log_table_idx_1, log_table_idx_2
 Let's make a new attribute named FloatRangeLogAttribute for example.
 Go to [LogAttribute.cs](https://github.com/Elysia-ff/LogFramework/blob/3a8a83267b21399e8246bee50f5fed1c810a81b7/Assets/LogFramework/LogAttribute.cs), 
 define it.  
-```
+```cs
 public class FloatRangeLogAttribute : LogAttribute
 {
     public float Min { get; private set; }
@@ -66,12 +66,12 @@ public class FloatRangeLogAttribute : LogAttribute
 }
 ```
 Then, Assign it to [LogContainer.eventDic](https://github.com/Elysia-ff/LogFramework/blob/3a8a83267b21399e8246bee50f5fed1c810a81b7/Assets/LogFramework/Editor/LogContainer.cs#L12)  
-```
+```cs
 eventDic.Add(typeof(FloatRangeLogAttribute), new AddEventHandler<FloatRangeLogAttribute>(AddFloatRangeLog));
 ```
 
 `AddFloatRangeLog` looks like..  
-```
+```cs
 private void AddFloatRangeLog(Type classType, FloatRangeLogAttribute attribute)
 {
     for (float i = attribute.Min; i <= attribute.Max; i += attribute.Delta)
@@ -82,7 +82,7 @@ private void AddFloatRangeLog(Type classType, FloatRangeLogAttribute attribute)
 ```
 
 Now, you can make a new log that has float.
-```
+```cs
 [FloatRangeLog("Let's make a new attribute", 1.0f, 2.0f, 0.1f)]
 public class LogNew : LogBase
 {
